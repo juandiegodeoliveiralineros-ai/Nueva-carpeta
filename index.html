@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persona 5</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Persona 5</h1>
+    <nav>
+      <a href="#seccion1">Creación</a>
+      <a href="#seccion2">Psicología</a>
+      <a href="#seccion3">Música</a>
+      <a href="login.html" onclick="localStorage.removeItem('datosUsuario')">Salir</a>
+    </nav>
+    <p id="saludo"></p>
+  </header>
+
+  <main>
+    <section id="seccion1">
+      <h2>Cómo y por qué se creó</h2>
+      <p>Persona 5 fue desarrollado por el estudio Atlus y dirigido por Katsura Hashino. Salió en Japón en 2016 y en el resto del mundo en 2017, tras varios años de desarrollo. Es la quinta entrega principal de la saga Persona.</p>
+      <p>Según sus creadores, la idea central era hablar de la libertad y de la rebeldía frente a una sociedad que impone reglas a los jóvenes. Por eso el diseño visual es tan agresivo y llamativo: el rojo, el negro y el blanco transmiten ese espíritu de rebelión.</p>
+    </section>
+
+    <section id="seccion2">
+      <h2>Psicología y filosofía</h2>
+      <p>El nombre de la saga viene de la psicología. El psiquiatra Carl Jung usó el término "persona" para describir la máscara social que cada individuo muestra a los demás. El juego usa esa idea: las personas llevan una máscara en la vida diaria y esconden otra parte de sí mismas.</p>
+      <p>También se inspira en ideas de la psicología sobre cómo percibimos la realidad. Cada persona interpreta el mundo a su manera, y esa percepción puede distorsionarse. A partir de ahí, el juego plantea preguntas filosóficas sobre la justicia, la libertad individual, la obediencia a la autoridad y la responsabilidad de nuestras decisiones.</p>
+    </section>
+
+    <section id="seccion3">
+      <h2>La música</h2>
+      <p>La banda sonora fue compuesta principalmente por Shoji Meguro. Mezcla jazz, funk, rock y acid jazz, un estilo poco habitual en los videojuegos de rol, y le da al juego una identidad muy reconocible.</p>
+      <p>Las canciones con voz, como "Life Will Change", se hicieron muy populares fuera del juego. La música no solo acompaña la acción, sino que refuerza el ambiente moderno, urbano y rebelde de toda la obra.</p>
+      <a href="pagina2.html"><button>Ir a la otra página</button></a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mis redes sociales</p>
+    <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener"><button>Instagram</button></a>
+    <a href="https://github.com/tu_usuario" target="_blank" rel="noopener"><button>GitHub</button></a>
+    <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" rel="noopener"><button>LinkedIn</button></a>
+    <p>&copy; 2026 Juan Diego. Todos los derechos reservados.</p>
+  </footer>
+<script src="transicion.js"></script>
+  <script>
+    const guardado = localStorage.getItem("datosUsuario");
+
+    if (guardado) {
+      const datos = JSON.parse(guardado);
+      document.getElementById("saludo").textContent = "Hola, " + datos.usuario + " (" + datos.correo + ")";
+    } else {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
